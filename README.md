@@ -1,2 +1,2 @@
-# priceless-microservices-hasura
+# react-graphql-hasura
 Created with CodeSandbox
