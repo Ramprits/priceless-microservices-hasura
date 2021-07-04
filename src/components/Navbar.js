@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useTitle } from "react-use";
+import { useAuth } from "../context/authContext";
 function Navbar(props) {
+  const { user } = useAuth();
+  useTitle(props.title);
   const buckets = {
     main: Array.isArray(props.bucketMain) ? props.bucketMain : []
   };
@@ -53,12 +56,16 @@ function Navbar(props) {
                 </li>
               </ul>
               <div className="ms-auto">
-                <a className="btn btn-outline-primary me-2" href="#/login">
-                  Log In
-                </a>
-                <a className="btn btn-primary" href="#">
-                  Sign Up
-                </a>
+                {!user && (
+                  <>
+                    <a className="btn btn-outline-primary me-2" href="#/login">
+                      Log In
+                    </a>
+                    <a className="btn btn-primary" href="#">
+                      Sign Up
+                    </a>
+                  </>
+                )}
               </div>
             </div>
           </div>

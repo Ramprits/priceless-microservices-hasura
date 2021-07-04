@@ -5,6 +5,7 @@ function HomePage() {
   return (
     <div>
       <Navbar
+        title="Dashboard page"
         bucketMain={[
           <section className="py-5 overflow-hidden">
             <div className="container py-5">
