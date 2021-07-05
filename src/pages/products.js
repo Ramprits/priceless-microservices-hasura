@@ -6,7 +6,12 @@ import { FETCH_PRODUCTS } from "../graphql/product";
 
 function ProductPage() {
   const { data, loading } = useSubscription(FETCH_PRODUCTS);
-  return <Navbar bucketMain={[<Product items={data} loading={loading} />]} />;
+  return (
+    <Navbar
+      title="Product Page"
+      bucketMain={[<Product items={data} loading={loading} />]}
+    />
+  );
 }
 
 export default ProductPage;
